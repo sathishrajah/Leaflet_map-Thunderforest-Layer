@@ -1,7 +1,34 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+<head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ThunderForest - Transport</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+        html { height: 100% }
+        body { height: 100%; margin: 0; padding: 0;}
+        .map { height: 100% }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+   
+</head>
+<body> Map of Pinner High School & nearby public transport.
+   
+    <!-- style="width: 1200px; height: 800px;">
+    -->
+    <div id="map" class="map"></div>
+
+<script>
+
+    const map = L.map('map').setView([51.57905869739722, -0.3856804499295197], 16);
+    const tiles = L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=e9da8ed0987a4ccdb4bb1710f21e0ee6', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.thunderforest.com/">ThunderForest</a>'
+    }).addTo(map);
+       
+</script>
+
 </body>
 </html>
