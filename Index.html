@@ -14,16 +14,17 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
    
 </head>
-<body> Map of Pinner High School & nearby public transport.
-   
-    <!-- style="width: 1200px; height: 800px;">
-    -->
-    <div id="map" class="map"></div>
+<body>      Map of Pinner High School & nearby public transport.
+            <div id="map" class="map"></div>
 
 <script>
 
+    // initialize the map on the "map" div with a given center and zoom
     const map = L.map('map').setView([51.57905869739722, -0.3856804499295197], 16);
-    const tiles = L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=e9da8ed0987a4ccdb4bb1710f21e0ee6', {
+
+    // When adding a new tile layet, note Leaflet can autodetect ‘retina’ or ‘hidpi’ screens, and load high-resolution map images automatically. 
+    // To enable this, include the {r} placeholder in the URL.
+    const tiles = L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}{r}.png?apikey=e9da8ed0987a4ccdb4bb1710f21e0ee6', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.thunderforest.com/">ThunderForest</a>'
     }).addTo(map);
